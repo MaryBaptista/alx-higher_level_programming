@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-class Student:
-    """Represents a student."""
-    def __init__(self, first_name, last_name, age):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+"""
+get __dict__ class description
+"""
 
-    def to_json(self, attrs=None):
-        if '__dict__' in dir(self):
-            res = dict()
-            found = False
-            if (type(attrs) is list) and all(type(s) is str for s in attrs):
-                found = True
-            for key in self.__dict__.keys():
-                if (not found) or (found and key in attrs):
-                    res[key] = self.__dict__[key]
-            return res
+
+def class_to_json(obj):
+    """returns the dictionary description with simple data
+    structure (list, dictionary, string, integer and boolean)
+    for JSON serialization of an object
+    Args:
+        obj (Object): file name
+    Returns:
+        (Object) : dict
+    """
+    return obj.__dict__
