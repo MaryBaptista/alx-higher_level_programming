@@ -1,4 +1,5 @@
-ttribute lookup module
+#!/usr/bin/python3
+""" Attribute lookup module
 """
 
 
